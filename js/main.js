@@ -1,15 +1,19 @@
 ;(function(){
-	$(function(){
-		var body=$('body'),
-			menuToggle=$('.ba-menu-toggle');
+	var menuToggle = document.getElementById("ba-menu-toggle"),
+		body = document.body;
 
-		menuToggle.click(function(event){
-			console.log(menuToggle);
-			event.preventDefault();
-			body.toggleClass('ba-menu-opened');
-			console.log('hw');
-		});
-	});
-})(jQuery);
+	menuToggle.onclick = function (event){
+		event.preventDefault();
+		if(body.className === "ba-menu-opened"){
+			body.className = "";
 
+		} else {
+			body.className = "ba-menu-opened";
+		}
 
+	}
+
+	console.log(menuToggle);
+	console.log(body);
+
+})();
